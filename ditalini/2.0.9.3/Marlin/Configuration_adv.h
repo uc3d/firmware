@@ -3858,10 +3858,10 @@
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
   #define MAIN_MENU_ITEM_1_DESC "Park Head"
-  #define MAIN_MENU_ITEM_1_GCODE "G28\nG1 X117.5 Y117.5 Z150 F2500"
+  #define MAIN_MENU_ITEM_1_GCODE "G28 O\nG1 X117.5 Y117.5 F10000\nG1 Z150 F10000"
 
   #define MAIN_MENU_ITEM_2_DESC "Apply Update"
-  #define MAIN_MENU_ITEM_2_GCODE "M997"
+  #define MAIN_MENU_ITEM_2_GCODE "M0 Confirm update?\nM997"
 
   //#define MAIN_MENU_ITEM_3_DESC "Preheat for " PREHEAT_2_LABEL
   //#define MAIN_MENU_ITEM_3_GCODE "M140 S" STRINGIFY(PREHEAT_2_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_2_TEMP_HOTEND)
