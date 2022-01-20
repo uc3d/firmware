@@ -846,7 +846,7 @@
 
 //#define HOMING_BACKOFF_POST_MM { 2, 2, 2 }  // (mm) Backoff from endstops after homing
 
-; //#define QUICK_HOME                          // If G28 contains XY do a diagonal move first
+#define QUICK_HOME                            // If G28 contains XY do a diagonal move first
 //#define HOME_Y_BEFORE_X                     // If G28 contains XY home Y before X
 //#define HOME_Z_FIRST                        // Home Z first. Requires a Z-MIN endstop (not a probe).
 //#define CODEPENDENT_XY_HOMING               // If X/Y can't home without homing Y/X first
@@ -3858,7 +3858,7 @@
   #define CUSTOM_MENU_MAIN_ONLY_IDLE         // Only show custom menu when the machine is idle
 
   #define MAIN_MENU_ITEM_1_DESC "Park Head"
-  #define MAIN_MENU_ITEM_1_GCODE "G28\nG1 X117.5 Y117.5 Z150 F500"
+  #define MAIN_MENU_ITEM_1_GCODE "G28\nG1 X117.5 Y117.5 Z150 F2500"
 
   #define MAIN_MENU_ITEM_2_DESC "Apply Update"
   #define MAIN_MENU_ITEM_2_GCODE "M997"
