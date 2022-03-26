@@ -3829,7 +3829,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-//#define STARTUP_COMMANDS "M17 Z"
+#define STARTUP_COMMANDS "M810 M117 Antiblob retract...|G92 E0|G1 E-2|G92 E0|M117 Homing...|G91|G1 Z15.0 F6000|G28 Y|G28 X|G28|G29|G90|M117 Priming Nozzle...|G92 E0|G1 Z2.0 F3000|G1 X10.1 Y20 Z0.28 F5000.0|G1 X10.1 Y280.0 Z0.28 F1500.0 E15|G1 X10.4 Y280.0 Z0.28 F5000.0|G1 X10.4 Y20 Z0.28 F1500.0 E30|G92 E0|G1 Z2.0 F3000|M117 Printing...\nM811 G91|G1 E-4 F2700|G1 E-2 Z0.2 F2400|G1 X5 Y5 F3000|G1 Z10|G90|G1 X0 Y310|M106 S0|M104 S0|M140 S0|M18"
 
 /**
  * G-code Macros
@@ -3837,10 +3837,10 @@
  * Add G-codes M810-M819 to define and run G-code macros.
  * Macros are not saved to EEPROM.
  */
-//#define GCODE_MACROS
+#define GCODE_MACROS
 #if ENABLED(GCODE_MACROS)
-  #define GCODE_MACROS_SLOTS       5  // Up to 10 may be used
-  #define GCODE_MACROS_SLOT_SIZE  50  // Maximum length of a single macro
+  #define GCODE_MACROS_SLOTS        2  // Up to 10 may be used
+  #define GCODE_MACROS_SLOT_SIZE  512  // Maximum length of a single macro
 #endif
 
 /**
@@ -3860,6 +3860,10 @@
   #define MAIN_MENU_ITEM_1_DESC "Park Head"
   #define MAIN_MENU_ITEM_1_GCODE "G28O\nG1 X150 Y150 Z150"
   //#define MAIN_MENU_ITEM_1_CONFIRM          // Show a confirmation dialog before this action
+
+  #define MAIN_MENU_ITEM_2_DESC "Restore Macros"
+  #define MAIN_MENU_ITEM_2_GCODE STARTUP_COMMANDS
+  #define MAIN_MENU_ITEM_2_CONFIRM
 
   //#define MAIN_MENU_ITEM_2_DESC "Preheat for " PREHEAT_1_LABEL
   //#define MAIN_MENU_ITEM_2_GCODE "M140 S" STRINGIFY(PREHEAT_1_TEMP_BED) "\nM104 S" STRINGIFY(PREHEAT_1_TEMP_HOTEND)
