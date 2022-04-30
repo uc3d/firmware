@@ -928,7 +928,7 @@
  * Z Steppers Auto-Alignment
  * Add the G34 command to align multiple Z steppers using a bed probe.
  */
-#define Z_STEPPER_AUTO_ALIGN
+// #define Z_STEPPER_AUTO_ALIGN
 #if ENABLED(Z_STEPPER_AUTO_ALIGN)
   // Define probe X and Y positions for Z1, Z2 [, Z3 [, Z4]]
   // If not defined, probe limits will be used.
@@ -1966,7 +1966,7 @@
 
   // #define BABYSTEP_DISPLAY_TOTAL          // Display total babysteps since last G28
 
-  #define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
+  //#define BABYSTEP_ZPROBE_OFFSET          // Combine M851 Z and Babystepping
   #if ENABLED(BABYSTEP_ZPROBE_OFFSET)
     //#define BABYSTEP_HOTEND_Z_OFFSET      // For multiple hotends, babystep relative Z offsets
     #define BABYSTEP_ZPROBE_GFX_OVERLAY   // Enable graphical overlay on Z-offset editor
@@ -2056,7 +2056,7 @@
  * Repeatedly attempt G29 leveling until it succeeds.
  * Stop after G29_MAX_RETRIES attempts.
  */
-#define G29_RETRY_AND_RECOVER
+//#define G29_RETRY_AND_RECOVER
 #if ENABLED(G29_RETRY_AND_RECOVER)
   #define G29_MAX_RETRIES 3
   #define G29_HALT_ON_FAILURE
@@ -3829,7 +3829,7 @@
  *
  * Execute certain G-code commands immediately after power-on.
  */
-#define STARTUP_COMMANDS "M810 M117 Antiblob retract...|G92 E0|G1 E-2|G92 E0|M117 Homing...|G91|G1 Z15.0 F6000|G28 Y|G28 X|G28|G29|G90|M117 Priming Nozzle...|G92 E0|G1 Z2.0 F3000|G1 X10.1 Y20 Z0.28 F5000.0|G1 X10.1 Y280.0 Z0.28 F1500.0 E15|G1 X10.4 Y280.0 Z0.28 F5000.0|G1 X10.4 Y20 Z0.28 F1500.0 E30|G92 E0|G1 Z2.0 F3000|M117 Printing...\nM811 G91|G1 E-4 F2700|G1 E-2 Z0.2 F2400|G1 X5 Y5 F3000|G1 Z10|G90|G1 X0 Y310|M106 S0|M104 S0|M140 S0|M18"
+#define STARTUP_COMMANDS "M810 M117 Antiblob retract...|G92 E0|G1 E-2|G92 E0|M117 Homing...|G91|G1 Z15.0 F6000|G28 Y|G28 X|G28|G90|M117 Priming Nozzle...|G92 E0|G1 Z2.0 F3000|G1 X10.1 Y20 Z0.28 F5000.0|G1 X10.1 Y280.0 Z0.28 F1500.0 E15|G1 X10.4 Y280.0 Z0.28 F5000.0|G1 X10.4 Y20 Z0.28 F1500.0 E30|G92 E0|G1 Z2.0 F3000|M117 Printing...\nM811 G91|G1 E-4 F2700|G1 E-2 Z0.2 F2400|G1 X5 Y5 F3000|G1 Z10|G90|G1 X0 Y310|M106 S0|M104 S0|M140 S0|M18"
 
 /**
  * G-code Macros
