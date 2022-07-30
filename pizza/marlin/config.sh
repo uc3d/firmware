@@ -182,4 +182,5 @@ sed -i '' 's/default_envs = mega2560/default_envs = STM32G0B1RE_btt/' platformio
 ./buildroot/bin/opt_set     MAIN_MENU_ITEM_4_DESC                  '"PID Autotune (" PREHEAT_3_LABEL ")"'
 ./buildroot/bin/opt_set     MAIN_MENU_ITEM_4_GCODE                 '"M106 S255\\nM303 E0 S" STRINGIFY(PREHEAT_3_TEMP_HOTEND) " U1\\nM303 E-1 SS" STRINGIFY(PREHEAT_3_TEMP_BED) " U1\\nM500\\nM106 S0\\nM117 PID Autotune " PREHEAT_3_LABEL " done."'
 
-
+platformio run
+cp .pio/build/STM32G0B1RE_btt/firmware.bin .
