@@ -55,9 +55,9 @@ sed -i '' 's/default_envs = mega2560/default_envs = STM32G0B1RE_btt/' platformio
 ./buildroot/bin/opt_disable STEALTHCHOP_I
 ./buildroot/bin/opt_disable STEALTHCHOP_J
 ./buildroot/bin/opt_disable STEALTHCHOP_K
-# ./buildroot/bin/opt_disable STEALTHCHOP_U
-# ./buildroot/bin/opt_disable STEALTHCHOP_V
-# ./buildroot/bin/opt_disable STEALTHCHOP_W
+./buildroot/bin/opt_disable STEALTHCHOP_U
+./buildroot/bin/opt_disable STEALTHCHOP_V
+./buildroot/bin/opt_disable STEALTHCHOP_W
 ./buildroot/bin/opt_disable STEALTHCHOP_E
 ./buildroot/bin/opt_enable  SENSORLESS_HOMING
 ./buildroot/bin/opt_enable  AUTO_REPORT_POSITION
@@ -78,6 +78,7 @@ sed -i '' 's/default_envs = mega2560/default_envs = STM32G0B1RE_btt/' platformio
 ./buildroot/bin/opt_enable  MAIN_MENU_ITEM_2_CONFIRM
 ./buildroot/bin/opt_enable  MAIN_MENU_ITEM_3_CONFIRM
 ./buildroot/bin/opt_enable  MAIN_MENU_ITEM_4_CONFIRM
+./buildroot/bin/opt_enable  SOFT_ENDSTOPS_MENU_ITEM
 
 ./buildroot/bin/opt_set     STRING_CONFIG_H_AUTHOR                 '"(uc3d, Ender-3 Pro)"'
 ./buildroot/bin/opt_set     MOTHERBOARD                            BOARD_BTT_SKR_MINI_E3_V3_0
