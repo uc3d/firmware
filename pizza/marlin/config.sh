@@ -91,7 +91,7 @@ sed -i '' 's/default_envs = mega2560/default_envs = STM32G0B1RE_btt/' platformio
 ./buildroot/bin/opt_set     E0_DRIVER_TYPE                         TMC2209
 ./buildroot/bin/opt_set     TEMP_SENSOR_0                          5
 ./buildroot/bin/opt_set     TEMP_SENSOR_BED                        1
-./buildroot/bin/opt_set     HEATER_0_MAXTEMP                       290
+./buildroot/bin/opt_set     HEATER_0_MAXTEMP                       300
 ./buildroot/bin/opt_set     BED_MAXTEMP                            120
 ./buildroot/bin/opt_set     HOTEND_OVERSHOOT                       10
 ./buildroot/bin/opt_set     DEFAULT_Kp                             21.73
