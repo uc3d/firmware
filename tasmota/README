@@ -1,3 +1,7 @@
+Make sure to replace %HOST% with the Tasmota device IP inside `tasmota.sh`
+
+Put tasmota.sh in /home/pi and set the execution bit (`chmod +x /home/pi/tasmota.sh`)
+
 #How to install
 sudo cp -v tasmota.service /etc/systemd/system #copy service file
 sudo systemctl enable tasmota.service          #enable service
