@@ -1,0 +1,11 @@
+#How to install
+sudo cp -v tasmota.service /etc/systemd/system #copy service file
+sudo systemctl enable tasmota.service          #enable service
+sudo systemctl start tasmota.service           #start service
+sudo systemctl status tasmota.service          #check if the service started
+sudo journalctl -f -u tasmota.service          #inspect the logs
+
+#How to Remove
+sudo systemctl stop tasmota.service
+sudo systemctl disable tasmota.service
+sudo systemctl daemon-reload

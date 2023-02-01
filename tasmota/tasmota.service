@@ -1,0 +1,11 @@
+[Unit]
+Description=Tasmota shutdown
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStop=/home/pi/tasmota.sh
+
+[Install]
+WantedBy=multi-user.target
