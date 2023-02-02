@@ -1,15 +1,76 @@
-Make sure to replace %HOST% with the Tasmota device IP inside `tasmota.sh`
+## Preparations
 
-Put tasmota.sh in /home/pi and set the execution bit (`chmod +x /home/pi/tasmota.sh`)
 
-#How to install
-sudo cp -v tasmota.service /etc/systemd/system #copy service file
-sudo systemctl enable tasmota.service          #enable service
-sudo systemctl start tasmota.service           #start service
-sudo systemctl status tasmota.service          #check if the service started
-sudo journalctl -f -u tasmota.service          #inspect the logs
 
-#How to Remove
-sudo systemctl stop tasmota.service
-sudo systemctl disable tasmota.service
+### step 1
+make sure you're in your home directory, by typing
+```sh
+cd /home/pi
+```
+
+download needed files 
+```sh
+wget https://github.com/uc3d/firmware/blob/master/tasmota/tasmota.service
+wget https://github.com/uc3d/firmware/blob/master/tasmota/tasmota.sh
+```
+
+### step 2
+
+Replace `%HOST%` with the Tasmota device IP inside `tasmota.sh`
+
+```sh
+nano tasmota.sh
+```
+use key combination `Ctrl`+`x` to save changes
+
+Alternatively, you can also run this oneliner to make the change for you (replacing `YOURHOSTNAME` with your desired value, of course.)
+
+```sh
+sed 's/%HOST%/YOURHOSTNAME/' tasmota.sh
+```
+
+
+### step 3
+
+Make the `tasmota.sh` executable
+```
+chmod +x /home/pi/tasmota.sh
+```
+
+
+## How to install
+
+```sh
+# move service file
+sudo mv tasmota.service /etc/systemd/system
+
+# reload list of service files
 sudo systemctl daemon-reload
+
+# start the service and enable on system boot
+sudo systemctl enable --now tasmota.service
+
+# check if the service started
+sudo systemctl status tasmota.service
+
+# inspect the logs
+sudo journalctl -f -u tasmota.service
+```
+
+## How to Remove
+```sh
+# stop the service
+sudo systemctl stop tasmota.service
+
+# disable it on system boot
+sudo systemctl disable tasmota.service
+
+# delete script file
+rm -rf /home/pi/tasmota.sh
+
+# remove the service file
+sudo rm -rf /etc/systemd/system/tasmota.service
+
+# refresh the service list
+sudo systemctl daemon-reload
+```
