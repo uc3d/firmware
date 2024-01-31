@@ -10,8 +10,8 @@ cd /home/pi
 
 download needed files 
 ```sh
-wget https://github.com/uc3d/firmware/blob/master/tasmota/tasmota.service
-wget https://github.com/uc3d/firmware/blob/master/tasmota/tasmota.sh
+wget https://raw.githubusercontent.com/uc3d/firmware/master/tasmota/tasmota.service
+wget https://raw.githubusercontent.com/uc3d/firmware/master/tasmota/tasmota.sh
 ```
 
 ### step 2
